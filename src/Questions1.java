@@ -91,40 +91,129 @@ package src;
 import java.util.Scanner;
 import java.util.Random;
 
+//public class Questions1 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        // Generate a random number between 1 and 100
+//        int number = 1 + (int)(100 * Math.random());
+//
+//        // Number of attempts
+//        int K = 5;
+//
+//        System.out.println("A number is chosen between 1 and 100.");
+//        System.out.println("You have " + K + " attempts to guess the correct number.");
+//
+//        // Loop for K attempts
+//        for (int i = 0; i < K; i++) {
+//            System.out.print("Enter your guess: ");
+//            int guess = sc.nextInt();
+//
+//            // Check the guess
+//            if (guess == number) {
+//                System.out.println("Congratulations! You guessed the correct number.");
+//                sc.close();
+//                return; // Exit main if guessed correctly
+//            } else if (guess < number) {
+//                System.out.println("The number is greater than " + guess);
+//            } else {
+//                System.out.println("The number is less than " + guess);
+//            }
+//        }
+//
+//        // If the user runs out of attempts
+//        System.out.println("You've exhausted all attempts. The correct number was: " + number);
+//        sc.close();
+//    }
+//}
 
+
+
+// Find days of week
+import java.util.Scanner;
+
+//public class Questions1 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//
+//        // Input date
+//        System.out.print("Enter day: ");
+//        int d = sc.nextInt();
+//        System.out.print("Enter month (1-12): ");
+//        int m = sc.nextInt();
+//        System.out.print("Enter year: ");
+//        int y = sc.nextInt();
+//
+//        // Adjust month and year for Zeller's Congruence
+//        if (m == 1 || m == 2) {
+//            m += 12;
+//            y -= 1;
+//        }
+//
+//        int K = y % 100;       // Last 2 digits of year
+//        int J = y / 100;       // First 2 digits of year
+//
+//        // Zeller's formula
+//        int h = (d + (13 * (m + 1)) / 5 + K + K / 4 + J / 4 + (5 * J)) % 7;
+//
+//        // Mapping Zeller's output to day names
+//        String[] days = {
+//                "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+//        };
+//
+//        // Output the result
+//        System.out.println("Day of the week is: " + days[h]);
+//    }
+//}
+
+//LEAP
+//public class Questions1 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("Enter a year: ");
+//        int year = sc.nextInt();
+//
+//        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+//            System.out.println(year + " is a Leap Year");
+//        } else {
+//            System.out.println(year + " is NOT a Leap Year");
+//        }
+//    }
+//}
+
+
+//ELIGIBILTY TO VOTE
+import java.util.Scanner;
+
+//public class Questions1 {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.print("Enter your age: ");
+//        int age = sc.nextInt();
+//        if (age >= 18) {
+//            System.out.println("You are eligible to vote.");
+//        } else {
+//            System.out.println("You are NOT eligible to vote.");
+//        }
+//    }
+//}
+
+//Vowel & Consonent
+import java.util.Scanner;
 
 public class Questions1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        // Generate a random number between 1 and 100
-        int number = 1 + (int)(100 * Math.random());
-
-        // Number of attempts
-        int K = 5;
-
-        System.out.println("A number is chosen between 1 and 100.");
-        System.out.println("You have " + K + " attempts to guess the correct number.");
-
-        // Loop for K attempts
-        for (int i = 0; i < K; i++) {
-            System.out.print("Enter your guess: ");
-            int guess = sc.nextInt();
-
-            // Check the guess
-            if (guess == number) {
-                System.out.println("Congratulations! You guessed the correct number.");
-                sc.close();
-                return; // Exit main if guessed correctly
-            } else if (guess < number) {
-                System.out.println("The number is greater than " + guess);
+        System.out.print("Enter a letter: ");
+        char ch = sc.next().toLowerCase().charAt(0);
+        if ((ch >= 'a' && ch <= 'z')) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.println(ch + " is a Vowel");
             } else {
-                System.out.println("The number is less than " + guess);
+                System.out.println(ch + " is a Consonant");
             }
+        } else {
+            System.out.println("Not a valid alphabet letter.");
         }
-
-        // If the user runs out of attempts
-        System.out.println("You've exhausted all attempts. The correct number was: " + number);
-        sc.close();
     }
 }
